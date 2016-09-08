@@ -10,9 +10,9 @@ return [
             'equal_to_or_less_than'    => 'equal to or less than',
             'greater_than'             => 'greater than',
             'less_than'                => 'less than',
-        ]
+        ],
     ],
     'value'    => [
-        'name' => 'Value'
-    ]
+        'name' => 'Value',
+    ],
 ];

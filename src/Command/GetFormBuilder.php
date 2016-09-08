@@ -6,7 +6,7 @@ use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInter
 use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
 use Anomaly\DiscountsModule\Condition\Form\ConditionFormBuilder;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
-use Illuminate\Contracts\Bus\SelfHandling;
+
 
 /**
  * Class GetFormBuilder
@@ -16,7 +16,7 @@ use Illuminate\Contracts\Bus\SelfHandling;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\SubtotalDiscountConditionExtension\Command
  */
-class GetFormBuilder implements SelfHandling
+class GetFormBuilder
 {
 
     /**

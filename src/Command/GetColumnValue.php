@@ -4,8 +4,6 @@ use Anomaly\ConfigurationModule\Configuration\Contract\ConfigurationRepositoryIn
 use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
 use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
-use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Translation\Translator;
 
 /**
@@ -16,7 +14,7 @@ use Illuminate\Translation\Translator;
  * @author        Ryan Thompson <ryan@pyrocms.com>
  * @package       Anomaly\SubtotalDiscountConditionExtension\Command
  */
-class GetColumnValue implements SelfHandling
+class GetColumnValue
 {
 
     /**
@@ -52,7 +50,7 @@ class GetColumnValue implements SelfHandling
         DiscountInterface $discount,
         ConditionInterface $condition = null
     ) {
-        $this->discount  = $discount;
+        $this->discount = $discount;
         $this->condition = $condition;
         $this->extension = $extension;
     }
@@ -69,6 +67,9 @@ class GetColumnValue implements SelfHandling
         $operator = $configuration->presenter('anomaly.extension.subtotal_discount_condition::operator', $scope)->value;
         $value    = $configuration->presenter('anomaly.extension.subtotal_discount_condition::value', $scope)->currency;
 
-        return $translator->trans('anomaly.extension.subtotal_discount_condition::message.condition', compact('operator', 'value'));
+        return $translator->trans(
+            'anomaly.extension.subtotal_discount_condition::message.condition',
+            compact('operator', 'value')
+        );
     }
 }

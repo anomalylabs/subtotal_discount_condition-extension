@@ -12,11 +12,11 @@ return [
                 'equal_to_or_less_than'    => 'anomaly.extension.subtotal_discount_condition::configuration.operator.options.equal_to_or_less_than',
                 'greater_than'             => 'anomaly.extension.subtotal_discount_condition::configuration.operator.options.greater_than',
                 'less_than'                => 'anomaly.extension.subtotal_discount_condition::configuration.operator.options.less_than',
-            ]
+            ],
         ],
     ],
     'value'    => [
         'required' => true,
-        'type' => 'anomaly.field_type.decimal',
+        'type'     => 'anomaly.field_type.decimal',
     ],
 ];
