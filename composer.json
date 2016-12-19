@@ -1,6 +1,11 @@
 {
     "name": "anomaly/subtotal_discount_condition-extension",
     "type": "streams-addon",
+    "require": {
+        "anomaly/streams-platform": "1.1.*",
+        "anomaly/discounts-module": "latest",
+        "anomaly/configuration-module": "2.1.*"
+    },
     "autoload": {
         "psr-4": {
             "Anomaly\\SubtotalDiscountConditionExtension\\": "src/"
