@@ -1,9 +1,9 @@
 <?php namespace Anomaly\SubtotalDiscountConditionExtension\Command;
 
 use Anomaly\ConfigurationModule\Configuration\Contract\ConfigurationRepositoryInterface;
-use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
-use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
-use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
+use Anomaly\StoreModule\Condition\Contract\ConditionInterface;
+use Anomaly\StoreModule\Condition\Extension\Contract\ConditionExtensionInterface;
+use Anomaly\StoreModule\Discount\Contract\DiscountInterface;
 use Illuminate\Translation\Translator;
 
 /**

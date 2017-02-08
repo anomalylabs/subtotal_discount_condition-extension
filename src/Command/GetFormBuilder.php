@@ -1,11 +1,11 @@
 <?php namespace Anomaly\SubtotalDiscountConditionExtension\Command;
 
 use Anomaly\ConfigurationModule\Configuration\Form\ConfigurationFormBuilder;
-use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
-use Anomaly\DiscountsModule\Condition\Extension\Contract\ConditionExtensionInterface;
-use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
-use Anomaly\DiscountsModule\Condition\Form\ConditionFormBuilder;
-use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
+use Anomaly\StoreModule\Condition\Contract\ConditionInterface;
+use Anomaly\StoreModule\Condition\Extension\Contract\ConditionExtensionInterface;
+use Anomaly\StoreModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
+use Anomaly\StoreModule\Condition\Form\ConditionFormBuilder;
+use Anomaly\StoreModule\Discount\Contract\DiscountInterface;
 
 
 /**
