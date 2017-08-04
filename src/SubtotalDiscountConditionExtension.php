@@ -4,7 +4,11 @@ use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
 use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
 use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
 use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
+use Anomaly\DiscountsModule\Discount\DiscountOperator;
+use Anomaly\StoreModule\Contract\PurchasableInterface;
 use Anomaly\SubtotalDiscountConditionExtension\Command\GetColumnValue;
+use Anomaly\SubtotalDiscountConditionExtension\Command\GetConditionOperator;
+use Anomaly\SubtotalDiscountConditionExtension\Command\GetConditionValue;
 use Anomaly\SubtotalDiscountConditionExtension\Command\GetFormBuilder;
 
 /**
@@ -48,5 +52,27 @@ class SubtotalDiscountConditionExtension extends ConditionExtension
     public function column(DiscountInterface $discount, ConditionInterface $condition)
     {
         return $this->dispatch(new GetColumnValue($this, $discount, $condition));
+    }
+
+    /**
+     * Return if the condition matches or not.
+     *
+     * @param $target
+     * @return string
+     */
+    public function matches($target)
+    {
+        $value    = $this->dispatch(new GetConditionValue($this->condition));
+        $operator = $this->dispatch(new GetConditionOperator($this->condition));
+
+        if ($target instanceof PurchasableInterface) {
+            return DiscountOperator::compare(
+                $target->getPurchasablePrice(),
+                $operator,
+                $value
+            );
+        }
+
+        return false;
     }
 }

@@ -85,7 +85,7 @@ class GetFormBuilder
         );
 
         if ($this->condition) {
-            $configuration->setScope('discount_' . $this->discount->getId() . '_' . $this->condition->getId());
+            $configuration->setScope($this->condition->getId());
         } else {
             $builder->on(
                 'saved_condition',
