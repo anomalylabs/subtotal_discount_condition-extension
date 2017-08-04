@@ -1,9 +1,9 @@
 <?php namespace Anomaly\SubtotalDiscountConditionExtension\Command;
 
 use Anomaly\ConfigurationModule\Configuration\Contract\ConfigurationRepositoryInterface;
-use Anomaly\StoreModule\Condition\Contract\ConditionInterface;
-use Anomaly\StoreModule\Condition\Extension\Contract\ConditionExtensionInterface;
-use Anomaly\StoreModule\Discount\Contract\DiscountInterface;
+use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
+use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Illuminate\Translation\Translator;
 
 /**
@@ -34,23 +34,23 @@ class GetColumnValue
     /**
      * The condition extension.
      *
-     * @var ConditionExtensionInterface
+     * @var ConditionExtension
      */
     protected $extension;
 
     /**
      * Create a new GetColumnValue instance.
      *
-     * @param ConditionExtensionInterface $extension
-     * @param DiscountInterface           $discount
-     * @param ConditionInterface          $condition
+     * @param ConditionExtension $extension
+     * @param DiscountInterface  $discount
+     * @param ConditionInterface $condition
      */
     public function __construct(
-        ConditionExtensionInterface $extension,
+        ConditionExtension $extension,
         DiscountInterface $discount,
         ConditionInterface $condition = null
     ) {
-        $this->discount = $discount;
+        $this->discount  = $discount;
         $this->condition = $condition;
         $this->extension = $extension;
     }

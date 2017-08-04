@@ -24,7 +24,7 @@ class SubtotalDiscountConditionExtension extends ConditionExtension
      *
      * @var string
      */
-    protected $provides = 'anomaly.module.store::condition.subtotal';
+    protected $provides = 'anomaly.module.discounts::condition.subtotal';
 
     /**
      * Return the form builder.
