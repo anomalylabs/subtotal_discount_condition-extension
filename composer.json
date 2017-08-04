@@ -1,6 +1,7 @@
 {
     "name": "anomaly/subtotal_discount_condition-extension",
     "type": "streams-addon",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Anomaly\\SubtotalDiscountConditionExtension\\": "src/"
