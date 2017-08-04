@@ -1,11 +1,11 @@
 <?php namespace Anomaly\SubtotalDiscountConditionExtension\Command;
 
 use Anomaly\ConfigurationModule\Configuration\Form\ConfigurationFormBuilder;
-use Anomaly\StoreModule\Condition\Contract\ConditionInterface;
-use Anomaly\StoreModule\Condition\Extension\Contract\ConditionExtensionInterface;
-use Anomaly\StoreModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
-use Anomaly\StoreModule\Condition\Form\ConditionFormBuilder;
-use Anomaly\StoreModule\Discount\Contract\DiscountInterface;
+use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
+use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
+use Anomaly\DiscountsModule\Condition\Form\ConditionFormBuilder;
+use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 
 
 /**
@@ -36,19 +36,19 @@ class GetFormBuilder
     /**
      * The condition extension.
      *
-     * @var ConditionExtensionInterface
+     * @var ConditionExtension
      */
     protected $extension;
 
     /**
      * Create a new GetFormBuilder instance.
      *
-     * @param ConditionExtensionInterface $extension
-     * @param DiscountInterface           $discount
-     * @param ConditionInterface          $condition
+     * @param ConditionExtension $extension
+     * @param DiscountInterface  $discount
+     * @param ConditionInterface $condition
      */
     public function __construct(
-        ConditionExtensionInterface $extension,
+        ConditionExtension $extension,
         DiscountInterface $discount,
         ConditionInterface $condition = null
     ) {

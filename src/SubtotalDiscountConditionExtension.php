@@ -1,9 +1,9 @@
 <?php namespace Anomaly\SubtotalDiscountConditionExtension;
 
-use Anomaly\StoreModule\Condition\Contract\ConditionInterface;
-use Anomaly\StoreModule\Condition\Extension\ConditionExtension;
-use Anomaly\StoreModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
-use Anomaly\StoreModule\Discount\Contract\DiscountInterface;
+use Anomaly\DiscountsModule\Condition\Contract\ConditionInterface;
+use Anomaly\DiscountsModule\Condition\Extension\ConditionExtension;
+use Anomaly\DiscountsModule\Condition\Extension\Form\ConditionExtensionFormBuilder;
+use Anomaly\DiscountsModule\Discount\Contract\DiscountInterface;
 use Anomaly\SubtotalDiscountConditionExtension\Command\GetColumnValue;
 use Anomaly\SubtotalDiscountConditionExtension\Command\GetFormBuilder;
 
