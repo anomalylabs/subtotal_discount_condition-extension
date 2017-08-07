@@ -62,7 +62,7 @@ class GetColumnValue
      */
     public function handle(Translator $translator, ConfigurationRepositoryInterface $configuration)
     {
-        $scope = 'discount_' . $this->discount->getId() . '_' . $this->condition->getId();
+        $scope = $this->condition->getId();
 
         $operator = $configuration->presenter('anomaly.extension.subtotal_discount_condition::operator', $scope)->value;
         $value    = $configuration->presenter('anomaly.extension.subtotal_discount_condition::value', $scope)->currency;
