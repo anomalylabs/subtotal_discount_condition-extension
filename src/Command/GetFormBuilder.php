@@ -91,7 +91,7 @@ class GetFormBuilder
                 'saved_condition',
                 function () use ($condition, $configuration) {
                     $configuration->setScope(
-                        'discount_' . $this->discount->getId() . '_' . $condition->getFormEntryId()
+                        $condition->getFormEntryId()
                     );
                 }
             );
